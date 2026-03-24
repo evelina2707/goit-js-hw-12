@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Image Search Gallery</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <form class="search-form">
-      <input name="searchQuery" />
+    <form class="form">
+      <label>
+        <input
+          type="text"
+          name="searchQuery"
+          placeholder="Search images..."
+          required
+        />
+      </label>
       <button type="submit">Search</button>
     </form>
 
-    <ul class="gallery"></ul>
-
-    <button class="load-more">Load more</button>
-
     <div class="loader"></div>
+    <ul class="gallery"></ul>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
