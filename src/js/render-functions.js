@@ -16,7 +16,11 @@ export function createGallery(images) {
       img => `
       <li class="gallery-item">
         <a href="${img.largeImageURL}">
-          <img src="${img.webformatURL}" alt="${img.tags}" />
+          <img 
+            src="${img.webformatURL}" 
+            alt="${img.tags}" 
+            loading="lazy"
+          />
         </a>
       </li>
     `
@@ -32,17 +36,25 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.add("active");
+  if (loader) {
+    loader.classList.add("active");
+  }
 }
 
 export function hideLoader() {
-  loader.classList.remove("active");
+  if (loader) {
+    loader.classList.remove("active");
+  }
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.add("active");
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.add("active");
+  }
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.remove("active");
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.remove("active");
+  }
 }
