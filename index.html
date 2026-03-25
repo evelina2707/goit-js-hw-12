@@ -10,23 +10,36 @@
     <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-DumFYO8Z.css">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-kQmtsVF4.css">
   </head>
+
   <body>
-    <form class="form">
-      <label>
-        <input
-          type="text"
-          name="searchQuery"
-          placeholder="Search images..."
-          required
-        />
-      </label>
-      <button type="submit">Search</button>
-    </form>
+    <header></header>
 
-    <ul class="gallery"></ul>
+    <main>
+      <section class="search-section">
+        <form class="form">
+          <label>
+            <input
+              type="text"
+              name="searchQuery"
+              placeholder="Search images..."
+              required
+            />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+      </section>
 
-    <button class="load-more">Load more</button>
+      <section class="gallery-section">
+        <ul class="gallery"></ul>
+      </section>
 
-    <div class="loader"></div>
+      <section class="controls">
+        <button class="load-more">Load more</button>
+        <div class="loader"></div>
+      </section>
+    </main>
+
+    <footer></footer>
+
   </body>
 </html>
