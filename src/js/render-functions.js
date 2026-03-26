@@ -1,16 +1,14 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const gallery = document.querySelector(".gallery");
-const loader = document.querySelector(".loader");
-const loadMoreBtn = document.querySelector(".load-more");
-
 const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
 });
 
 export function createGallery(images) {
+  const gallery = document.querySelector(".gallery");
+
   const markup = images
     .map(
       img => `
@@ -32,21 +30,26 @@ export function createGallery(images) {
 }
 
 export function clearGallery() {
+  const gallery = document.querySelector(".gallery");
   gallery.innerHTML = "";
 }
 
 export function showLoader() {
-  loader.classList.add("active");
+  const loader = document.querySelector(".loader");
+  if (loader) loader.classList.add("active");
 }
 
 export function hideLoader() {
-  loader.classList.remove("active");
+  const loader = document.querySelector(".loader");
+  if (loader) loader.classList.remove("active");
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.add("active");
+  const btn = document.querySelector(".load-more");
+  if (btn) btn.classList.add("active");
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.remove("active");
+  const btn = document.querySelector(".load-more");
+  if (btn) btn.classList.remove("active");
 }
