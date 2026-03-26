@@ -36,25 +36,17 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  if (loader) {
-    loader.classList.add("active");
-  }
+  loader.classList.add("active");
 }
 
 export function hideLoader() {
-  if (loader) {
-    loader.classList.remove("active");
-  }
+  loader.classList.remove("active");
 }
 
 export function showLoadMoreButton() {
-  if (loadMoreBtn) {
-    loadMoreBtn.classList.add("active");
-  }
+  loadMoreBtn.classList.add("active");
 }
 
 export function hideLoadMoreButton() {
-  if (loadMoreBtn) {
-    loadMoreBtn.classList.remove("active");
-  }
+  loadMoreBtn.classList.remove("active");
 }

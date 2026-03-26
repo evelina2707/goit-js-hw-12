@@ -34,7 +34,7 @@ form.addEventListener("submit", async e => {
 
     if (data.hits.length === 0) {
       iziToast.error({
-        message: "Sorry, no images found.",
+        message: "Sorry, there are no images matching your search query. Please try again!",
       });
       return;
     }
@@ -49,10 +49,16 @@ form.addEventListener("submit", async e => {
       showLoadMoreButton();
     } else {
       hideLoadMoreButton();
+
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+      });
     }
+
+    form.reset();
   } catch (error) {
     iziToast.error({
-      message: "Something went wrong.",
+      message: "Something went wrong. Please try again later.",
     });
   } finally {
     hideLoader();
@@ -61,6 +67,8 @@ form.addEventListener("submit", async e => {
 
 loadMoreBtn.addEventListener("click", async () => {
   page += 1;
+
+  hideLoadMoreButton();
   showLoader();
 
   try {
@@ -70,7 +78,6 @@ loadMoreBtn.addEventListener("click", async () => {
 
     const totalPages = Math.ceil(totalHits / 15);
 
-    // scroll
     const card = document.querySelector(".gallery-item");
     if (card) {
       const { height } = card.getBoundingClientRect();
@@ -85,13 +92,14 @@ loadMoreBtn.addEventListener("click", async () => {
       hideLoadMoreButton();
 
       iziToast.info({
-        message:
-          "We're sorry, but you've reached the end of search results.",
+        message: "We're sorry, but you've reached the end of search results.",
       });
+    } else {
+      showLoadMoreButton();
     }
   } catch (error) {
     iziToast.error({
-      message: "Something went wrong.",
+      message: "Something went wrong. Please try again later.",
     });
   } finally {
     hideLoader();
