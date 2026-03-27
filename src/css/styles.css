@@ -71,3 +71,16 @@
   transition: transform 0.3s;
 }
 
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.info-item {
+  margin: 0;
+  text-align: center;
+}
+
